@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Animation</title>
+    <style>
+      body{
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body onload="startAni()">
+  <script>
+    let Anitext;
+    function startAni(){
+      myCanvas.start();
+      
+      Anitext = new textAnimation("Hello World~ Oh My God!!! How Amazing Canvas!???");
+    }
+
+    let myCanvas = {
+      canvas : document.createElement("canvas"),
+      start : function(){
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+        this.frame = 0;
+        this.timeOut = 0;
+        this.context = this.canvas.getContext('2d');
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+          
+        this.clock = setInterval(update, 20);
+      },
+      clear : function(){
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      }
+      
+    }
+
+    function update(){
+      myCanvas.clear();
+
+      Anitext.update();
+    }
+
+
+    const everyInterval = (n) => {
+      if (myCanvas.frame % n == 0) {
+        return true;
+      }
+      return false;
+    }
+
+    const timeOut = (n) => {
+      if (myCanvas.timeOut == n ){
+        myCanvas.timeOut = 0;
+        return true;
+      }
+      return false;
+    }
+
+    function textAnimation(text){
+      this.text = text;
+
+      this.len = 0;
+      
+      this.update = function(){
+        myCanvas.frame++;
+        if (everyInterval(2) || myCanvas.frame == 1) {
+          if(this.len < this.text.length){
+            this.len ++;
+          }else{
+            myCanvas.timeOut ++;
+            if(timeOut(50)){  
+              this.len = 0;
+              this.text = "Mad Guy!!! Bye Bye!!!";
+            } 
+          }
+        }
+
+          ctx = myCanvas.context;
+          ctx.beginPath();
+          ctx.font="32px arial";
+          ctx.fillStyle = "red";
+          ctx.fillText(this.text.slice(0, this.len), 100, 100);
+      }
+
+      this.stop = () => {
+        clearInterval(this.clock);
+      }
+    }
+
+  </script>
+  </body>
+</html>

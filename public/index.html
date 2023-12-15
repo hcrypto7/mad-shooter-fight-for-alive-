@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MadSooter-Individual Fight</title>
+    <link rel="stylesheet" href="game.css"/>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./networkcom.js"></script>
+    <script src="./game.js" defer></script>
+    <link rel="icon" href="./favicon.png"/>
+  </head>
+  <body>
+    <div id="userInput">
+      <h1>🦄Mad Shooter-Individual Fight👽</h1>
+      <label>UserName:</label>
+      <input type="text" id="username" required placeholder="UserName" maxlength="10"/>
+      <label>UserColor:</label>
+      <select id="usercolor" name="usercolor">
+        <option value="dodgerblue" selected>Dodgerblue</option>
+        <option value="violet">violet</option>
+        <option value="mediumseagreen">mediumseagreen</option>
+        <option value="slateblue">slateblue</option>
+        <option value="tomato">tomato</option>
+      </select>
+      <button onclick="startGame()">Start!</button>
+      <h1>This is Individual Fight. Select your name & color then fight for ALIVE!!! </h1>
+    </div>  
+  </body>
+</html>
