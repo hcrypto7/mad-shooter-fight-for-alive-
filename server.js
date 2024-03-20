@@ -7,7 +7,8 @@ const ShooterManager = new Shooter();
 
 
 const app = express();
-const server = require('http').createServer(app);
+app.use(express.static('public'));
+const server = app.listen(80);
 
 var io = require('socket.io')(server);
 io.on('connection', function(client){
@@ -73,9 +74,4 @@ io.on('connection', function(client){
 
 
 
-const port = 80;
-app.use(express.static('public'));
 
-server.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-});
