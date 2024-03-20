@@ -1,5 +1,5 @@
 
-let socket = io('http://127.0.0.1');
+let socket = io('https://mad-shooter-fight-for-alive.vercel.app/');
 
 socket.on('connect', () => {
   console.log('connected!');
