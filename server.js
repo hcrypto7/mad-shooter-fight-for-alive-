@@ -10,7 +10,9 @@ const app = express();
 app.use(express.static('public'));
 const server = app.listen(80);
 
-var io = require('socket.io')(server);
+var io = require('socket.io')(server, {
+    allowEIO3: true // false by default
+  });
 io.on('connection', function(client){
     console.log("connected!");
     client.on('sendName', function(data){
