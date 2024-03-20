@@ -1,5 +1,5 @@
 
-let socket = io('https://192.168.144.73:7000');
+let socket = io('https://127.0.0.1:7000');
 socket.on('connect', () => {
   console.log('connected!');
 });
