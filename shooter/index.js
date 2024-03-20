@@ -16,12 +16,12 @@ function ShooterManager () {
 
   this.itemClock = setInterval(()=>{
     this.generateItem();
-  },2700);
+  },10000);
 
   this.generateItem = () => {
     let itemType = Math.round(Math.random() * 10);
     const pos = this.posGenerator();
-    console.log(pos, itemType);
+    // console.log(pos, itemType);
     let newitem = new item(itemType, 20, pos.x, pos.y);
     this.items.push(newitem);
   }

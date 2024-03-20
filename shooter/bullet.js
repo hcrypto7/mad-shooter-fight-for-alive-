@@ -29,7 +29,7 @@ function bullet(width, height, color, x, y, damage, angle, speed, time){
     (mytop > othertop) &&
     (myright < otherright) &&
     (myleft > otherleft)) {
-      console.log("yes!:", otherleft, myright, otherright, myleft, othertop, mybottom, otherbottom, mytop);
+      // console.log("yes!:", otherleft, myright, otherright, myleft, othertop, mybottom, otherbottom, mytop);
       crash = true;
     }
     return crash;
