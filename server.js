@@ -8,11 +8,18 @@ const ShooterManager = new Shooter();
 
 const app = express();
 app.use(express.static('public'));
-const server = app.listen(80);
+const server = app.listen(80, ()=> {
+   console.log(`server is runing on ${80} port`);
+});
 
 var io = require('socket.io')(server, {
-    allowEIO3: true, // false by default
-    path: '/game'
+    // allowEIO3: true, // false by default
+    path: '/game',
+    serveClient: false,
+    // below are engine.IO options
+    pingInterval: 10000,
+    pingTimeout: 5000,
+    cookie: false
   });
 io.on('connection', function(client){
     console.log("connected!");
