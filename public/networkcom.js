@@ -1,5 +1,5 @@
 
-let socket = io('https://127.0.0.1:7000');
+let socket = io('https://mad-shooter-fight-for-alive.vercel.app:7000');
 socket.on('connect', () => {
   console.log('connected!');
 });
