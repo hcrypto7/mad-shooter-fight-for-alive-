@@ -1,5 +1,7 @@
 
-let socket = io();
+let socket = io({
+  path: '/game'
+});
 
 socket.on('connect', () => {
   console.log('connected!');
