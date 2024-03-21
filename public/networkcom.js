@@ -1,5 +1,5 @@
 
-let socket = io("https://mad-shooter-fight-for-alive.onrender.com/");
+let socket = io('https://mad-shooter-fight-for-alive.onrender.com');
 
 socket.on('connect', () => {
   console.log('connected!');
