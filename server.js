@@ -24,7 +24,7 @@ var io = require('socket.io')(server, {
 io.on('connection', function(client){
     console.log("connected!", client);
     client.on('sendName', function(data){
-        const userip = client.conn.remoteAddress;
+        const userip = client.handshake.address;
         ShooterManager.addUser({...data, userip : userip, socket:client});
         if(data.name.trim().length == 0){
             data.name = "Mad Guy!~";
