@@ -66,9 +66,9 @@ function ShooterManager () {
   }
 
   this.addUser = (data) => {
-    if(this.findShooter(data.userip) !== -1){
-      return;
-    }
+    // if(this.findShooter(data.userip) !== -1){
+    //   return;
+    // }
     const shooterPos = this.posGenerator();
     
     const newShooter = new shooter(shooterPos.x, shooterPos.y, data.color, data.name, data.userip, 0);
