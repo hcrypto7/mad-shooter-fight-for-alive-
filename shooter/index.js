@@ -75,6 +75,7 @@ function ShooterManager () {
 
     this.shooters.push(newShooter);
     this.sockets.set(data.userip, data.socket);
+    console.log(this.shooters);
   }
 
   this.posGenerator = () => {

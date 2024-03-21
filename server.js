@@ -22,11 +22,10 @@ var io = require('socket.io')(server, {
     cookie: false
   });
 io.on('connection', function(client){
-    console.log("connected!");
+    console.log("connected!", client);
     client.on('sendName', function(data){
         const userip = client.conn.remoteAddress;
         ShooterManager.addUser({...data, userip : userip, socket:client});
-        
         if(data.name.trim().length == 0){
             data.name = "Mad Guy!~";
         }
