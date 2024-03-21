@@ -50,7 +50,7 @@ io.on('connection', function(client){
             }
         }
     });
-    console.log(client.conn.remoteAddress);
+    console.log(client.handshake.address, ": ", client.id);
 
     client.on('client_status', function(data){
         ShooterManager.updateShooter(data.shooter);
