@@ -1,5 +1,7 @@
 
-let socket = io('https://mad-shooter-fight-for-alive.onrender.com');
+let socket = io({
+  path: '/game'
+});
 
 socket.on('connect', () => {
   console.log('connected!');

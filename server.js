@@ -14,6 +14,7 @@ const server = app.listen(80, ()=> {
 
 var io = require('socket.io')(server, {
     // allowEIO3: true, // false by default
+    path: '/game',
     serveClient: false,
     // below are engine.IO options
     pingInterval: 10000,
